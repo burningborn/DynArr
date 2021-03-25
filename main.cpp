@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 using namespace std;
 
 //void FillRand(int** arr)
@@ -17,10 +17,10 @@ void erase_row(int**& arr, int& m, int n);
 void main()
 {
 	setlocale(LC_ALL, "Rus");
-	int m = 5; //Количество строк
-	int n = 5; //Количество столбцов
-	/*cout << " Введите количество строк: "; cin >> m;
-	cout << "\n Введите количество элементов строки: "; cin >> n;*/
+	int m; //Количество строк
+	int n; //Количество столбцов
+	cout << " Введите количество строк: - "; cin >> m;
+	cout << "\n Введите количество элементов строки: "; cin >> n;
 
 	int** arr = new int* [m] {};    //1) Создаём массив указателей:
 
@@ -50,6 +50,7 @@ void main()
 	}
 	//2)Удаляем массив указателей:
 	delete[] arr;
+	cout << "\n\n Hello WORLD!(:-) \n\n";
 }
 
 void FillRand(int** arr, const int m, const int n)
@@ -137,8 +138,8 @@ void insert_row(int**& arr, int& m, int n)
 	}
 
 	int value;
-	cout << " Выберите номер новой строки от 0 до " << m - 1 << tab; cin >> value;
-
+	cout << " Выберите номер новой строки от 1 до " << m << " - "; cin >> value;
+	value -= 1;
 	for (int i = 0; i < m - 1; i++)
 	{
 		for (int j = 0; j < n; j++)
@@ -213,8 +214,8 @@ void erase_row(int**& arr, int& m, int n)
 		buffer[i] = new int[n] {};
 	}
 	int value;
-	cout << " Выберите номер удаляемой строки от 0 до " << m << tab; cin >> value;
-
+	cout << " Выберите номер удаляемой строки от 1 до " << m + 1 << " - "; cin >> value;
+	value -= 1;
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
